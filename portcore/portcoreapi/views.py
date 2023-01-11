@@ -1,7 +1,9 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
 from rest_framework import permissions
-from .serializers import UserSerializer, GroupSerializer
+from .serializers import UserSerializer, GroupSerializer, CategoriesSerializer, DescriptionSerializer
+from .models import Categories, Description
+from django.http import HttpResponse
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -20,3 +22,22 @@ class GroupViewSet(viewsets.ModelViewSet):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
     permission_classes = [permissions.IsAuthenticated]
+
+class CategoryViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows groups to be viewed or edited.
+    """
+    queryset = Categories.objects.all()
+    serializer_class = CategoriesSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+class DescriptionViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows groups to be viewed or edited.
+    """
+    queryset = Description.objects.all()
+    serializer_class = DescriptionSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+def category(request):
+    return HttpResponse('Wello pisiun')
