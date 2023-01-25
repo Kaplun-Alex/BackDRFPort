@@ -7,7 +7,6 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
         model = User
         fields = ['url', 'username', 'email', 'groups']
 
-
 class GroupSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Group
@@ -22,3 +21,8 @@ class DescriptionSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Description
         fields = '__all__'
+
+class ButtonsSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Categories
+        fields = ['name_of_category']

@@ -13,4 +13,5 @@ urlpatterns = [
     path('contact/', views.category),
     path('add_category/', views.category),
     path('add_exp/', views.category),
+    path('request_viev/', views.category),
 ]

@@ -2,7 +2,7 @@ from django.db import models
 
 class Categories(models.Model):
     
-    name_of_category = models.CharField(max_length=30)
+    name_of_category = models.CharField(max_length=64)
 
     def __str__(self):
         return self.name_of_category
@@ -13,6 +13,8 @@ class Description(models.Model):
 
     def __str__(self):
         return self.about_field
+
+
 
 
 
