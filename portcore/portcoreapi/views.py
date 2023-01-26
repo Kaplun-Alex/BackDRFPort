@@ -51,4 +51,4 @@ class ButtonsViewSet(viewsets.ModelViewSet):
 
 def category(request):
     print(request_meta(request))
-    return HttpResponse('Wello pisiun')
+    return HttpResponse('hello')
